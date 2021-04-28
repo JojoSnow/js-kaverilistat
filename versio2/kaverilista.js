@@ -13,7 +13,7 @@ function addName(event) {
         alert('Pitää antaa nimi!');
         return;
     }
-    nameArray.push(nameFriend);
+    nameArray.unshift(nameFriend);
     
     for(let i = 0; i < nameArray.length; i++) {
         let newLiName = document.createElement('li')
@@ -38,5 +38,13 @@ function deleteName(event) {
         if(nameArray[i] === nameFriend){
             nameArray.splice(i, 1);
         }
+    }
+
+    for(let i = 0; i < nameArray.length; i++) {
+        let newLiName = document.createElement('li')
+        let newLiText = document.createTextNode(nameArray[i])
+        newLiName.appendChild(newLiText)
+        newLiName.className = 'friend-list-item';
+        document.querySelector('#friendList').appendChild(newLiName)
     }
 }
