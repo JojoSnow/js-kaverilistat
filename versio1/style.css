@@ -5,3 +5,8 @@ h1 {
 p {
     margin: 0;
 }
+
+ol {
+    margin: 0;
+    padding-left: 3px;
+}
